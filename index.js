@@ -2,12 +2,12 @@
 
 function crawlTree(array) {
   let treeToString = "";
-  if (Array.isArray(array)) {
-    for (let i = 0; i < array.length; i++) {
-      crawlTree(array[i]);
+  for (let i = 0; i < array.length; i++) {
+    if (!Array.isArray(array[i])) {
+      treeToString += array[i];
+    } else {
+      treeToString += crawlTree(array[i]);
     }
-  } else if (typeof array === "string") {
-    treeToString += array;
   }
   return treeToString;
 }
