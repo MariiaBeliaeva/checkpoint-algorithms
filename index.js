@@ -16,19 +16,15 @@ function crawlTree(array) {
 
 function twoSum(arr, target) {
   let indexes = [];
-  arr.map((a, i) => {
-    arr.map((b, j) => {
-      if (i !== j && a + b === target) {
+  for (let i = 0; i <= arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] == target) {
         indexes.push(i, j);
       }
-    });
-  });
+    }
+  }
   return indexes;
 }
-
-const arr = [3, 2, 4];
-const target = 6;
-console.log(twoSum(arr, target));
 
 // Всё, что ниже, нужно для тестов. Не изменяй этот код
 const functions = { crawlTree, twoSum };
