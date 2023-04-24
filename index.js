@@ -1,8 +1,7 @@
 // Код для первого задания напиши в этой функции
 
-let treeToString = "";
-
 function crawlTree(array) {
+  let treeToString = "";
   if (Array.isArray(array)) {
     for (let i = 0; i < array.length; i++) {
       crawlTree(array[i]);
